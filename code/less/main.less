@@ -1,4 +1,5 @@
 @body-font:'Raleway';
+@main-color:#444;
 
 /*==============================================
 	Let's start the magic!
@@ -18,7 +19,6 @@ html, body {
 ==============================================*/
 .section {
 	padding:50px 35px;
-	margin:5px 0;
 	transition:all ease-in-out 1s;
 	
 	&.dark {
@@ -74,6 +74,15 @@ img { max-width:100%; }
 	background-size:cover;
 }
 
+.bg-projects {
+	background:url('../images/background/projects-2.jpg') center;
+	background-size:cover;
+}
+
+.bg-order-now {
+	background:#fff;
+}
+
 /*==============================================
 	Font Color
 ==============================================*/
@@ -89,7 +98,7 @@ img { max-width:100%; }
 ==============================================*/
 h1,h2,h3,h4,h5,h6 { color:#000; font-weight:300; text-transform:uppercase; }
 h1 small,h2 small,h3 small,h4 small,h5 small,h6 small { color:#bbb; }
-p { font-size:15px; }
+p { font-size:15px; line-height:190%; }
 
 .heading-small { font-size:16px; }
 
@@ -119,6 +128,18 @@ p { font-size:15px; }
 /*==============================================
 	Navigation
 ==============================================*/
+.navbar-lenasia {
+	background:rgba(0,0,0,0.05);
+	border-radius:0;
+	transition:all ease-in-out 250ms;
+	
+	&.affix {
+		top:0;
+		width:100%;
+		z-index:99999;
+	}
+}
+
 
 /*==============================================
 	Accordion
@@ -223,8 +244,46 @@ p { font-size:15px; }
 }
 
 /*==============================================
+	Docked Illustration
+==============================================*/
+.docked-illustration {
+	position:relative;
+	overflow:hidden;
+	height:350px;
+	padding-top:25px;
+	transition:all ease-in-out 200ms;
+	margin-top:50px;
+	margin-bottom:-50px;
+}
+
+.bg-order-now:hover {
+	.docked-illustration {
+		padding-top:0;
+	}
+}
+
+/*==============================================
+	Map
+==============================================*/
+.map {
+	padding-right:0;
+}
+
+#map_canvas {
+	width: 100%;
+	height: 400px;
+	background: #f8fdfd;
+	z-index: 0;
+	position: relative;
+}
+
+/*==============================================
 	Form
 ==============================================*/
+.contact-textarea {
+	height:130px !important;
+}
+
 .form-horizontal.iForm {
 	padding:0; 
 	
@@ -387,12 +446,12 @@ p { font-size:15px; }
 ==============================================*/
 .btn-lux {
 	background:transparent;
-	color:#fff;
+	color:#ccc;
 	box-shadow:none;
-	border:1px solid #fff;
-	border-radius:0;
+	border:2px solid #aaa;
+	border-radius:3px;
 	transition:all ease-in-out 200ms;
-	padding:15px 20px; 
+	padding:10px 15px; 
 	
 	&:focus,
 	&:hover {
@@ -549,13 +608,131 @@ p { font-size:15px; }
 }
 
 /*==============================================
+	Services
+==============================================*/
+.service {
+	margin-bottom:10px; 
+	
+	.featured-image {
+		border:2px solid @main-color;
+		border-radius:50px;
+		display:inline-block;
+		width:75px;
+		height:75px;
+		text-align:center;
+		float:left;
+		margin-right:20px;
+		margin-bottom:20px;
+		padding-top:10px;
+		transition:all ease-in-out 200ms;
+	}
+		
+	.ico-type {
+		font-size:35px;
+		color:@main-color;
+	}
+	
+	&:hover {
+		.featured-image {
+			box-shadow:0 0 8px @main-color;
+		}
+	}
+}
+
+/*==============================================
 	Owl Carousels
 ==============================================*/
 .project {
 	background:#fff;
-	padding:25px 10px;
 	float:left;
-	margin:0 10px;
+	margin:10px;
+	box-shadow:3px 1px 5px rgba(0,0,0,0.5);
+	
+	.big-image {
+		padding:0;
+		margin:0;
+	}
+	
+	.project-detail {
+		padding:0;
+		margin:0;
+	}
+	
+	.project-description {
+		padding:35px;
+		border-bottom:2px solid #ddd;
+		min-height:233px;
+		max-height:233px;
+		overflow:auto;
+	}
+	
+	.project-title {
+		margin:0;
+		padding:0;
+	}
+	
+	.project-meta {
+		color:@main-color;
+		text-transform:uppercase;
+		margin-bottom:20px;
+	}
+	
+	.project-thumbnail {
+		background:#f0f0f0;
+		text-align:center;
+		padding:10px;
+		
+		a {
+			display:inline-block;
+			margin:10px;
+		}
+		
+		img {
+			border-radius:50px;
+			width:100px;
+			height:100px;
+			border:5px solid #fff;
+			box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+		}
+	}
+}
+
+.projects {
+	.owl-theme .owl-controls .owl-page:hover span,
+	.owl-theme .owl-controls .owl-page.active span {
+		background:#fff !important;
+	}
+	
+	.owl-theme .owl-controls .owl-page span {
+		opacity:1;
+		background:rgba(255,255,255,0.1);
+		border:2px solid #fff !important;
+		transition:all ease-in-out 200ms;
+		width:20px;
+		height:20px;
+	}
+	
+	.owl-theme .owl-controls {
+		margin-top:25px;
+	}
+}
+
+.owl-navigation-custom {
+	text-align:right;
+	padding:10px;
+	
+	.button {
+		background:#fff;
+		display:inline-block;
+		padding:10px;
+		text-align:center;
+		width:35px;
+		
+		&:hover {
+			background:@main-color;
+			cursor:pointer;
+		}
+	}
 }
 
 /*==============================================

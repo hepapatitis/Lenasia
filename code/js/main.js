@@ -57,20 +57,77 @@
 		});
 		
 		// Featured Projects Carousels
-		$("#projects").owlCarousel({
- 
-			  navigation : true, // Show next and prev buttons
-			  slideSpeed : 300,
-			  paginationSpeed : 400,
-			  singleItem:true
-		 
-			  // "singleItem:true" is a shortcut for:
-			  // items : 1, 
-			  // itemsDesktop : false,
-			  // itemsDesktopSmall : false,
-			  // itemsTablet: false,
-			  // itemsMobile : false
-		 
+		var projects = $("#projects");
+		projects.owlCarousel({
+			slideSpeed : 350,
+			paginationSpeed : 400,
+			singleItem:true
 		});
+		
+		// Custom Navigation Events
+		$(".next").click(function(){
+			projects.trigger('owl.next');
+		});
+		$(".prev").click(function(){
+			projects.trigger('owl.prev');
+		});
+	});
+	
+	$(window).load(function(){
+		if($('#map').hasClass('map')){
+			//Google Map					
+			var latlng = new google.maps.LatLng(45.738028,21.224535);
+			var settings = {
+				zoom: 16,
+				center: new google.maps.LatLng(45.738028,21.224535), 
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				mapTypeControl: false,
+				scrollwheel: false,
+				draggable: true,
+				mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+				navigationControl: false,
+				navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+			};
+
+			var map = new google.maps.Map(document.getElementById("map_canvas"), settings);
+			
+			google.maps.event.addDomListener(window, "resize", function() {
+				var center = map.getCenter();
+				google.maps.event.trigger(map, "resize");
+				map.setCenter(center);
+			});
+			
+			var contentString = '<div id="content">'+
+				'<div id="siteNotice">'+
+				'</div>'+
+				'<h3 id="firstHeading" class="firstHeading">Mali Studio</h3>'+
+				'<div id="bodyContent">'+
+				'<p>Here we are!</p>'+
+				'</div>'+
+				'</div>';
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
+			
+			var companyImage = new google.maps.MarkerImage('images/marker.png',
+				new google.maps.Size(32,47),<!-- Width and height of the marker -->
+				new google.maps.Point(0,0),
+				new google.maps.Point(35,20)<!-- Position of the marker -->
+			);
+
+			var companyPos = new google.maps.LatLng(45.738028,21.224535);
+			
+			var companyMarker = new google.maps.Marker({
+				position: companyPos,
+				map: map,
+				icon: companyImage,               
+				title: "Mali",
+				zIndex: 3
+			});
+
+			google.maps.event.addListener(companyMarker, 'click', function() {
+				infowindow.open(map,companyMarker);
+			});
+		}
 	});
 })(jQuery);
