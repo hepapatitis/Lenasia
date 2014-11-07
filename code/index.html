@@ -23,8 +23,9 @@
   <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css">
   <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css">
   <link rel="stylesheet" href="plugins/owl-carousel/owl.transitions.css">
+  <link rel="stylesheet" href="plugins/perfect-scrollbar/perfect-scrollbar.min.css">
   
-  <script src="js/modernizr-2.7.1.js"></script>
+  <script src="js/modernizr.custom.js"></script>
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
@@ -34,55 +35,67 @@
   <link rel="shortcut icon" href="favicon.ico">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#main-nav" data-offset="85">
+	<!-- Loading-->
+	<div id="loading" class="loading-container"><div class="loading-signal"></div></div>
+	<!-- end:Loading -->
+	
 	<!-- Intro -->
-	<section class="section">
-		Beginning with Logo
+	<section class="section splash auto-height" id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12"
+					data-top="opacity:1;"
+					data-top-bottom="opacity:0;"
+				>
+					<h1 class="splash-title">Lenasia<br /><small>Step up your beat</small></h1>
+					<p>from one bullet to another square to another dimension</p>
+				</div>
+			</div>
+		</div>
 	</section>
 	<!-- end:Intro -->
 	
 	<!-- Navigation -->
-	<nav id="navigation" class="navbar navbar-lenasia" role="navigation">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Brand</a>
-			</div>
+	<div class="navigation-container">
+		<nav id="navigation" class="navbar navbar-lenasia" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+						<span class="sr-only">Toggle navigation</span>
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand" href="#">Lenasia</a>
+				</div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-							<li class="divider"></li>
-							<li><a href="#">One more separated link</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-	</nav>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="main-nav">
+					<ul class="nav navbar-nav" role="tablist">
+						<li class="active"><a href="#top"><i class="fa fa-home"></i></a></li>
+						<li><a href="#service">Service</a></li>
+						<li><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#explanation">Why Us</a></li>
+						<li><a href="#blogs">Blogs</a></li>
+						<li><a href="#order">Order</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</div>
 	<!-- end:Navigation -->
 	
-	<!-- Services #2 -->
-	<section class="section">
+	<!-- Services -->
+	<section class="section bg-services" id="service">
 		<div class="container">
             <div class="row">
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-8 col-md-offset-2 col-xs-12 section-heading">
+					<h2 class="section-title">Our Services</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rutrum nibh eget tortor condimentum tincidunt.</p>
+				</div>
+				
+				<div class="col-md-4 col-sm-8 col-offset-sm-2 col-xs-12">
 					<article class="service-2">
 						<div class="featured-image ico-type">
 							<i class="fa fa-signal"></i>
@@ -98,7 +111,7 @@
 					</article>
 				</div>
 				
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-4 col-sm-8 col-offset-sm-2 col-xs-12">
 					<article class="service-2">
 						<div class="featured-image ico-type">
 							<i class="fa fa-comment-o"></i>
@@ -114,7 +127,7 @@
 					</article>
 				</div>
 				
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-4 col-sm-8 col-offset-sm-2 col-xs-12">
 					<article class="service-2">
 						<div class="featured-image ico-type">
 							<i class="fa fa-rss"></i>
@@ -132,10 +145,10 @@
             </div>
 		</div>
 	</section>
-	<!-- end:Services #2 -->
+	<!-- end:Services -->
 	
 	<!-- Portfolio -->
-	<section class="section bg-projects projects">
+	<section class="section bg-projects projects" id="portfolio">
 		<div class="container">
 			<div class="owl-navigation-custom">
 				<a class="button prev"><i class="fa fa-angle-left"></i></a>
@@ -144,19 +157,19 @@
 			<div id="projects" class="owl-carousel owl-theme">
 				<div class="item">
 					<div class="project">
-						<div class="col-md-6 big-image">
-							<img src="images/background/projects.jpg" class="img-responsive" />
-						</div>
+						<div class="col-md-6 big-image" style="background-image:url('images/projects.jpg');"></div>
 						<div class="col-md-6 project-detail">
 							<div class="project-description">
-								<h3 class="project-title">Woody Design</h3>
-								<div class="project-meta">Design</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum leo. In imperdiet neque a nunc bibendum sagittis. Maecenas facilisis semper ipsum, rhoncus consequat sapien dictum sed. Vivamus interdum arcu vel dui imperdiet sagittis.</p>
+								<h3 class="project-title">Vegetable Platter</h3>
+								<div class="project-meta">Food</div>
+								<div class="project-text perfect-scrollbar">
+									<p>Aliquam ullamcorper egestas pellentesque. In nec nisi ligula. Aliquam non tellus neque. Vivamus ullamcorper a ex sit amet iaculis. Nam euismod enim quam.</p>
+								</div>
 							</div>
 							<div class="project-thumbnail">
-								<a class="magnific-popup" href="images/background/projects.jpg" /><img src="images/background/projects.jpg" /></a>
-								<a class="magnific-popup" href="images/background/projects-2.jpg" /><img src="images/background/projects-2.jpg" /></a>
-								<a class="magnific-popup" href="images/background/projects-3.jpg" /><img src="images/background/projects-3.jpg" /></a>
+								<a class="magnific-popup" href="images/projects.jpg" /><img src="images/projects.jpg" /></a>
+								<a class="magnific-popup" href="images/projects-2.jpg" /><img src="images/projects-2.jpg" /></a>
+								<a class="magnific-popup" href="images/projects-3.jpg" /><img src="images/projects-3.jpg" /></a>
 							</div>
 						</div>
 					</div>
@@ -164,19 +177,19 @@
 				
 				<div class="item">
 					<div class="project">
-						<div class="col-md-6 big-image">
-							<img src="images/background/projects-2.jpg" class="img-responsive" />
-						</div>
+						<div class="col-md-6 big-image" style="background-image:url('images/projects-2.jpg');"></div>
 						<div class="col-md-6 project-detail">
 							<div class="project-description">
 								<h3 class="project-title">Woody Design</h3>
 								<div class="project-meta">Design</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum leo. In imperdiet neque a nunc bibendum sagittis. Maecenas facilisis semper ipsum, rhoncus consequat sapien dictum sed. Vivamus interdum arcu vel dui imperdiet sagittis.</p>
+								<div class="project-text perfect-scrollbar">
+									<p>Aliquam ullamcorper egestas pellentesque. In nec nisi ligula. Aliquam non tellus neque. Vivamus ullamcorper a ex sit amet iaculis. Nam euismod enim quam.</p>
+								</div>
 							</div>
 							<div class="project-thumbnail">
-								<a class="magnific-popup" href="images/background/projects.jpg" /><img src="images/background/projects.jpg" /></a>
-								<a class="magnific-popup" href="images/background/projects-2.jpg" /><img src="images/background/projects-2.jpg" /></a>
-								<a class="magnific-popup" href="images/background/projects-3.jpg" /><img src="images/background/projects-3.jpg" /></a>
+								<a class="magnific-popup" href="images/projects.jpg" /><img src="images/projects.jpg" /></a>
+								<a class="magnific-popup" href="images/projects-2.jpg" /><img src="images/projects-2.jpg" /></a>
+								<a class="magnific-popup" href="images/projects-3.jpg" /><img src="images/projects-3.jpg" /></a>
 							</div>
 						</div>
 					</div>
@@ -184,19 +197,19 @@
 				
 				<div class="item">
 					<div class="project">
-						<div class="col-md-6 big-image">
-							<img src="images/background/projects-3.jpg" class="img-responsive" />
-						</div>
+						<div class="col-md-6 big-image" style="background-image:url('images/projects-3.jpg');"></div>
 						<div class="col-md-6 project-detail">
 							<div class="project-description">
-								<h3 class="project-title">Woody Design</h3>
+								<h3 class="project-title">Wood Background</h3>
 								<div class="project-meta">Design</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum leo. In imperdiet neque a nunc bibendum sagittis. Maecenas facilisis semper ipsum, rhoncus consequat sapien dictum sed. Vivamus interdum arcu vel dui imperdiet sagittis.</p>
+								<div class="project-text perfect-scrollbar">
+									<p>Fusce luctus vehicula velit et ultricies. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent pellentesque, mauris a interdum malesuada, velit mauris convallis sapien, ac vehicula ante mi quis neque. Pellentesque eu tellus sit amet elit varius laoreet.</p>
+								</div>
 							</div>
 							<div class="project-thumbnail">
-								<a class="magnific-popup" href="images/background/projects.jpg" /><img src="images/background/projects.jpg" /></a>
-								<a class="magnific-popup" href="images/background/projects-2.jpg" /><img src="images/background/projects-2.jpg" /></a>
-								<a class="magnific-popup" href="images/background/projects-3.jpg" /><img src="images/background/projects-3.jpg" /></a>
+								<a class="magnific-popup" href="images/projects.jpg" /><img src="images/projects.jpg" /></a>
+								<a class="magnific-popup" href="images/projects-2.jpg" /><img src="images/projects-2.jpg" /></a>
+								<a class="magnific-popup" href="images/projects-3.jpg" /><img src="images/projects-3.jpg" /></a>
 							</div>
 						</div>
 					</div>
@@ -207,12 +220,12 @@
 	</section>
 	<!-- end:Portfolio -->
 	
-	<!-- Services -->
-	<section class="section">
+	<!-- Why Us (Explanation) -->
+	<section class="section" id="explanation">
 		<div class="container">
             <div class="row">
-				<div class="col-md-8 col-md-offset-2 col-xs-12 text-center">
-					<h2>Why Choose Us</h2>
+				<div class="col-md-8 col-md-offset-2 col-xs-12 section-heading">
+					<h2 class="section-title">Why Choose Us</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rutrum nibh eget tortor condimentum tincidunt.</p>
 				</div>
 			</div>
@@ -293,7 +306,7 @@
             </div>
 		</div>
 	</section>
-	<!-- end:Services -->
+	<!-- end:Why Us -->
 	
 	<!-- Twitter -->
 	<section class="section bg-twitter" id="tweets">
@@ -311,10 +324,10 @@
 	<!-- end:Twitter -->
 	
 	<!-- Blogs -->
-	<section class="section">
+	<section class="section bg-blogs" id="blogs">
 		<div class="container">
             <div class="row">
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-4 col-sm-8 col-offset-sm-2 col-xs-12">
 					<article class="blog">
 						<div class="featured-image">
 							<div class="hexagon" style="background-image:url('images/blogs-1.jpg')">
@@ -334,7 +347,7 @@
 					</article>
 				</div>
 				
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-4 col-sm-8 col-offset-sm-2 col-xs-12">
 					<article class="blog">
 						<div class="featured-image">
 							<div class="hexagon" style="background-image:url('images/blogs-2.jpg')">
@@ -354,7 +367,7 @@
 					</article>
 				</div>
 				
-				<div class="col-md-4 col-xs-12">
+				<div class="col-md-4 col-sm-8 col-offset-sm-2 col-xs-12">
 					<article class="blog">
 						<div class="featured-image">
 							<div class="hexagon" style="background-image:url('images/blogs-3.jpg')">
@@ -379,15 +392,23 @@
 	<!-- end:Blogs -->
 	
 	<!-- Order Now -->
-	<section class="section bg-order-now">
+	<section class="section bg-order-now" id="order">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
-					<h2>Some random text</h2>
+				<div class="col-xs-12 col-md-8 col-md-offset-2 section-heading">
+					<h2 class="section-title">Order Now</h2>
 					<p>Integer fringilla fermentum eros, quis scelerisque libero interdum nec. Duis nec sollicitudin justo. Vivamus ut sapien eu quam facilisis facilisis. Nulla ut luctus metus.</p>
-					<a class="btn btn-lux" href="#">Order Now Button</a>
+					
+					<div class="order-price">$69</div>
+					
+					<a class="btn btn-lux" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+					<span class="or">or</span>
+					<a class="btn btn-lux" href="#contact">Contact Us</a>
+					
+				</div>
+				<div class="col-xs-12 col-md-8 col-md-offset-2">
 					<div class="docked-illustration">
-						<img src="images/books.png" class="img-responsive" />
+						<img src="images/iphones.png" class="img-responsive" />
 					</div>
 				</div>
 			</div>
@@ -396,9 +417,13 @@
 	<!-- end:Order Now -->
 	
 	<!-- Contact -->
-	<section class="section">
+	<section class="section bg-contact" id="contact">
 		<div class="container">
 			<div class="row">
+				<div class="col-xs-12 col-md-8 col-md-offset-2 section-heading">
+					<h2 class="section-title">Contact Us</h2>
+					<p>Vivamus ut sapien eu quam facilisis facilisis. Nulla ut luctus metus.</p>
+				</div>
 				<form role="form" class="margin-40">
 					<div class="row">
 						<div class="col-md-6">
@@ -426,6 +451,9 @@
 								<label class="sr-only for="contact-message">Message</label>
 								<textarea class="form-control contact-textarea" id="contact-message" name="contact-message" placeholder="Enter message"></textarea>
 							</div>
+						</div>
+						<div class="col-xs-12 text-right">
+							<button class="btn btn-lux" type="submit">Send Message</button>
 						</div>
 					</div>
 				</form>
@@ -469,7 +497,11 @@
 	
 	<!-- Footer -->
 	<footer class="footer">
-		Footer
+		<div class="container">
+			<div class="col-xs-12">
+				Lenasia Template - 2014
+			</div>
+		</div>
 	</footer>
 	<!-- end:Footer -->
 	
@@ -483,8 +515,10 @@
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/skrollr.min.js"></script>
     <script src="js/tweetie.min.js"></script>
     <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="js/main.js"></script>
     
