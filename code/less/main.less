@@ -177,6 +177,11 @@ img { max-width:100%; }
 	background:#f6f7f1;
 }
 
+.bg-statistic {
+	background:#333;
+	color:#fff;
+}
+
 .bg-order-now {
 	background:#fff;
 }
@@ -262,6 +267,20 @@ p { font-size:15px; line-height:190%; }
 	text-transform:uppercase;
 	margin:10px 15px;
 	font-weight:bold;
+}
+
+.number {
+	font-size:50px;
+}
+
+.quantifier {
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
+.icon {
+	font-size:60px;
+	color:#999;
 }
 
 /*==============================================
@@ -1067,6 +1086,31 @@ p { font-size:15px; line-height:190%; }
 }
 
 /*==============================================
+	Social Buttons
+==============================================*/
+.social-buttons {
+	font-size:0;
+	text-align:center;
+}
+
+.social-btn {
+	font-size:25px;
+	color:#fff;
+	width:50px;
+	height:50px;
+	padding:8px 0 0 0;
+	background:#333;
+	transition:all ease-in-out 250ms;
+	display:inline-block;
+	border-radius:50px;
+	margin:5px;
+	
+	&:hover {
+		background:#555;
+	}
+}
+
+/*==============================================
 	Utility
 ==============================================*/
 .block { display:block; }
@@ -1088,58 +1132,6 @@ p { font-size:15px; line-height:190%; }
 @media (max-width: 480px) { 
 	.main-title { font-size:35px; }
 	.main-title small { font-size:16px; }
-	
-	.form-horizontal.iForm {
-		margin-top:30px;
-		
-		.control-label {
-			font-size:15px;
-		}
-		
-		.form-control {
-			font-size:15px;
-			height:22px;
-		}
-		
-		textarea.form-control {
-			height: auto;
-		}
-	}
-	
-	.form-horizontal .form-group {
-		margin-left:0;
-		margin-right:0;
-	}
-	
-	.social-btn {
-		width:100px;
-		height:100px;
-		font-size:40px;
-	}
-	
-	.newsletter {
-		fieldset {
-			border:1px solid #fff;
-			display:inline-block;
-			
-			input {
-				width:155px;
-				padding:15px 19px;
-			}
-			
-			input[type=submit],button {
-				padding:15px 19px;
-			}
-		}
-	}
-	
-	.clock_container {
-		margin-top:-25px;
-	}
-	
-	.clock-section {
-		padding:13px 10px;
-	}
 }
 
 
